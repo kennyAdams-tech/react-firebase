@@ -55,6 +55,7 @@ const LoginSignUp = () => {
 
 
   return (
+<<<<<<< HEAD
     <div className='container card shadow mt-5 '>
 
         <div className="d-flex gap-5 mx-auto pt-5">
@@ -67,6 +68,14 @@ const LoginSignUp = () => {
 
         <form onSubmit={(e)=>handleSubmit(e, login ? 'Login' : 'SignUp')} className=' p-3 pb-5 '>
             <h1 className='text-center h3'>{login ? 'Login' : 'SignUp'}</h1>
+=======
+    <div className='m-5 p-5 card shadow '>
+        <div className="d-flex gap-5 mx-auto mb-3">
+            <div className={login ? 'h2 btn btn-secondary px-4' : 'h2'} onClick={()=>setLogin(true)}>Login</div>
+            <div className={!login ? 'h2 btn btn-secondary px-4' : 'h2'} onClick={()=>setLogin(false)}>SignUp</div>
+        </div>        <form onSubmit={(e)=>handleSubmit(e, login ? 'Login' : 'SignUp')}>
+            <h1 className='text-center'>{login ? 'Login' : 'SignUp'}</h1>
+>>>>>>> ce77ab28967e91a3e68bcad3e79fa9b3424f200a
             <div className="mb-3">
                 <label className="form-label">Email address</label>
                 <input 
