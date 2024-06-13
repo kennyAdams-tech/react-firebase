@@ -55,44 +55,46 @@ const LoginSignUp = () => {
 
 
   return (
-    <div className='container d-flex card shadow mt-5 mx-auto'>
+    <div className="carrier">
+            <div className='container d-flex card shadow mt-5 mx-auto'>
 
-        <div className="d-flex gap-5 mx-auto pt-5">
+                <div className="d-flex gap-5 mx-auto pt-5">
 
-            <div className={login ? 'h2 btn btn-secondary ' : 'h2 btn btn-light '} onClick={()=>setLogin(true)}>Login</div>
+                    <div className={login ? 'h2 btn btn-secondary ' : 'h2 btn btn-light '} onClick={()=>setLogin(true)}>Login</div>
 
-            <div className={!login ? 'h2 btn btn-secondary ' : 'h2 btn btn-light'} onClick={()=>setLogin(false)}>SignUp</div>
+                    <div className={!login ? 'h2 btn btn-secondary ' : 'h2 btn btn-light'} onClick={()=>setLogin(false)}>SignUp</div>
 
-        </div>  
+                </div>  
 
-        <form onSubmit={(e)=>handleSubmit(e, login ? 'Login' : 'SignUp')} className='container p-3 pb-5 w-500'>
-            <h1 className='text-center'>{login ? 'Login' : 'SignUp'}</h1>
-            <div className="mb-3">
-                <label className="form-label">Email address</label>
-                <input 
-                type="email" className="form-control" id="exampleInputEmail1" 
-                name='email'
-                aria-describedby="emailHelp"
-                onChange={(e) => setUserName(e.target.value)}
-                value={username}
-                />
-                
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                <form onSubmit={(e)=>handleSubmit(e, login ? 'Login' : 'SignUp')} className='container p-3 pb-5 '>
+                    <h1 className='text-center'>{login ? 'Login' : 'SignUp'}</h1>
+                    <div className="mb-3">
+                        <label className="form-label">Email address</label>
+                        <input 
+                        type="email" className="form-control" id="exampleInputEmail1" 
+                        name='email'
+                        aria-describedby="emailHelp"
+                        onChange={(e) => setUserName(e.target.value)}
+                        value={username}
+                        />
+                        
+                        <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Password</label>
+                        <input type="password" className="form-control" 
+                        name='password'
+                        id="exampleInputPassword1"
+                        onChange={(e) => setUserPassword(e.target.value)}
+                        value={userPassword}
+                        />
+                    </div>
+                    <div className='d-grid'>
+                    <button type="submit" className="btn btn-secondary">{login ? 'Login' : 'SignUp'}</button>
+                    </div>
+                    <ToastContainer/>
+                </form>
             </div>
-            <div className="mb-3">
-                <label className="form-label">Password</label>
-                <input type="password" className="form-control" 
-                name='password'
-                id="exampleInputPassword1"
-                onChange={(e) => setUserPassword(e.target.value)}
-                value={userPassword}
-                />
-            </div>
-            <div className='d-grid'>
-            <button type="submit" className="btn btn-secondary">{login ? 'Login' : 'SignUp'}</button>
-            </div>
-            <ToastContainer/>
-        </form>
     </div>
   )
 }

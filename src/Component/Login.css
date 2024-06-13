@@ -1,10 +1,14 @@
-.container {
+.carrier {
     width: 40%;
     margin: auto;
 }
 
+form  {
+    width: 10%;
+}
+
 @media (max-width : 768px) {
-    .container {
+    .carrier {
         width: 80%;
         margin: auto;
     }
